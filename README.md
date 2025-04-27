@@ -1,2 +1,2 @@
 # DIO
-Repositório voltado para projetos da DIO
+Repositorio voltado para projetos da DIO
