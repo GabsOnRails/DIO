@@ -1,0 +1,3 @@
+# ignorar pasta com credencias
+.streamlit
+.env
