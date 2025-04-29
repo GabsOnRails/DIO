@@ -6,6 +6,7 @@ Nesse laboratório desenvolvi, em Python, uma solução para armazenar e gerenci
 
 Foi um processo muito interessante, principalmente a parte de banco de dados que nunca havia mexido antes.
 O código foi desenvolvido com base nas aulas do bootcamp e com o apoio do querido GPT, que me ajudou a encontrar formas mais eficientes e seguras de programar.
+PS: Devido questões de segurança, a pasta .streamlit e a váriavel .env não estão no repositorio, mas devem ser criadas e preenchidas para que o projeto funcione.
 
 ## 🚀 Tecnologias Utilizadas
 
