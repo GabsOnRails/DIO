@@ -215,7 +215,3 @@ Este guia fornece instruções para criar e usar ambientes de containers no Azur
     - Após a ativação, reinicie o computador para aplicar as alterações.
 
 ---
-
-Com isso, você tem a configuração básica para utilizar containers no Azure de maneira econômica! Aproveite e ajuste conforme suas necessidades. 
-
-Caso precise de mais informações ou ajustes, sinta-se à vontade para perguntar.
