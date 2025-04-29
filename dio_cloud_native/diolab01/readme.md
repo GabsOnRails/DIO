@@ -10,9 +10,9 @@ PS: Devido questões de segurança, a pasta .streamlit e a váriavel .env não e
 
 A estrutura desses arquivos é a seguinte: <br>
 Criar uma pasta .streamlit e colocar dentro dela o arquivo secrets.toml com as seguintes informações:
-![estrutura do streamlit](prints/estrutura_streamlit.png)
+![estrutura do streamlit](prints/estrutura_streamlit.png) <br>
 
-A variável .env deve ficar da seguinte forma:
+A variável .env deve ficar da seguinte forma:<br>
 ![variável .env](prints/variavel_env.png)
 
 ## 🚀 Tecnologias Utilizadas
