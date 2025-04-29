@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nome aqui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nome aqui
+  template:
+    metadata:
+      labels:
+        app: nome aqui
+    spec:
+      containers:
+      - name: nome aqui
+        image: nome aqui image
+        ports:
+        - containerPort: 80
