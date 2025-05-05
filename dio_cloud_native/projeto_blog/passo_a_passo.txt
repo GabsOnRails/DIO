@@ -1,0 +1,110 @@
+## 🚀 **Objetivo do Lab**
+
+Criar um blog HTML, empacotar como container Docker, 
+subir para o Docker Hub, e rodar no ACI com acesso público via HTTP.
+
+---
+
+## 📁 1. Estrutura do projeto
+
+Crie uma pasta com os seguintes arquivos:
+
+### `index.html`
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Blog</title>
+</head>
+<body>
+    <h1>Bem-vindo ao meu blog em HTML no Azure!</h1>
+    <p>Este é um teste de laboratório usando Azure Container Instances.</p>
+</body>
+</html>
+```
+
+### `Dockerfile`
+
+```dockerfile
+# Imagem base leve
+FROM nginx:alpine
+
+# Copia o HTML para a pasta do NGINX
+COPY index.html /usr/share/nginx/html/index.html
+
+# Expõe a porta HTTP
+EXPOSE 80
+```
+
+---
+
+## 🐳 2. Build da imagem local
+
+No terminal, dentro da pasta do projeto:
+
+```bash
+docker build -t meu-blog-html .
+```
+
+---
+
+## 📤 3. Push para Docker Hub
+
+1. Faça login (se ainda não tiver):
+
+   ```bash
+   docker login
+   ```
+
+2. Marque a imagem com seu nome no Docker Hub:
+
+   ```bash
+   docker tag meu-blog-html seuusuario/meu-blog-html
+   ```
+
+3. Envie para o Docker Hub:
+
+   ```bash
+   docker push seuusuario/meu-blog-html
+   ```
+
+---
+
+## ☁️ 4. Criar o container no Azure
+
+> Substitua `seuusuario` e o nome do grupo conforme quiser.
+
+```bash
+az group create --name meuRG --location brazilsouth
+
+az container create \
+  --resource-group meuRG \
+  --name blogcontainer \
+  --image seuusuario/meu-blog-html \
+  --dns-name-label bloglabexemplo \
+  --ports 80 \
+  --location brazilsouth
+```
+
+---
+
+## 🌐 5. Acessar seu blog
+
+Acesse via:
+
+```
+http://bloglabexemplo.brazilsouth.azurecontainer.io
+```
+
+---
+
+## 🧹 6. (Opcional) Remover recursos após o lab
+
+```bash
+az group delete --name meuRG --yes --no-wait
+```
+
+---
+
+
