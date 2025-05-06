@@ -8,8 +8,8 @@ Cada projeto é uma oportunidade de colocar em prática os conhecimentos adquiri
 ## 🚀 Projetos
 
 - [Cloud Native](dio_cloud_native) <br>
-Lab01: Solução para armazenar e gerenciar dados de um e-commerce na nuvem, focando em escalabilidade, segurança e eficiência. <br>
-Lab02: Aplicação web estática no Azure App Service, utilizando a Azure CLI para provisionar recursos na nuvem de forma automatizada.
+Lab01: Solução para armazenar e gerenciar dados de um e-commerce na nuvem, focando em escalabilidade, segurança e eficiência. <br><br>
+Lab02: Aplicação web estática no Azure App Service, utilizando a Azure CLI para provisionar recursos na nuvem de forma automatizada.<br><br>
 Lab03: Como empacotar uma aplicação web estática com Docker e implantá-la no Azure Container Apps, utilizando um fluxo completo de criação de imagem, push para o Azure Container Registry (ACR) e deploy automatizado via Azure CLI.
 
 
