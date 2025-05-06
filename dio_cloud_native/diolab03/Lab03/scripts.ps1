@@ -1,51 +1,46 @@
-docker build -t blog-henrique-app:latest .
+# Build a Docker image
+docker build -t my-app:latest .
 
-#detached mode". 
-# Quando você usa essa opção, o container é executado em segundo plano (background) e o 
-# terminal não fica "preso" ao processo do container. Ele retorna apenas o ID do container iniciado.
+# Run the container in detached mode (em background)
+docker run -d -p 80:80 my-app:latest
 
-
-docker run -d -p 80:80 blog-henrique-app:latest
-
-az login az l
+# Login to Azure
+az login
 
 # Create a resource group
-az group create --name containerappslab03 --location eastus
+az group create --name my-resource-group --location eastus
 
-# Create Container Registry
-az acr create --resource-group containerappslab03 --name bloghenriqueacr --sku Basic
+# Create Azure Container Registry (ACR)
+az acr create --resource-group my-resource-group --name myacrname --sku Basic
 
 # Login to ACR
-az acr login --name bloghenriqueacr
+az acr login --name myacrname
 
-# Tag the image
-docker tag blog-henrique-app:latest bloghenriqueacr.azurecr.io/blog-henrique-app:latest
+# Tag the image with the ACR path
+docker tag my-app:latest myacrname.azurecr.io/my-app:latest
 
-# Push the image
-docker push bloghenriqueacr.azurecr.io/blog-henrique-app:latest
+# Push the image to ACR
+docker push myacrname.azurecr.io/my-app:latest
 
-#containerID = bloghenriqueacr.azurecr.io/blog-henrique-app:latest
-#user =  bloghenriqueacr
-#password = duzYmeARNVgFRMrndpcI91oXkqOJfC4YjrZYUDyAxQ+ACRCFxFzB
+# Variables (representação genérica de informações sensíveis)
+# containerID = myacrname.azurecr.io/my-app:latest
+# registry-username = myacrname
+# registry-password = <ACR_PASSWORD>
 
-# Create Environment container app
-az containerapp env create  --name blog-henrique-env --resource-group containerappslab03 --location eastus 
+# Create Container Apps environment
+az containerapp env create \
+  --name my-container-env \
+  --resource-group my-resource-group \
+  --location eastus
 
-# Create Container App
-az containerapp create --name blog-henrique-app --resource-group containerappslab03 --image bloghenriqueacr.azurecr.io/blog-henrique-app:latest --environment blog-henrique-env --target-port 80 --ingress external --registry-username bloghenriqueacr --registry-password duzYmeARNVgFRMrndpcI91oXkqOJfC4YjrZYUDyAxQ+ACRCFxFzB --registry-server bloghenriqueacr.azurecr.io
-
-
-# az containerapp create \
-# --name blog-henrique-app \
-# --resource-group containerappslab03 \
-# --location eastus \
-# --image bloghenriqueacr.azurecr.io/blog-henrique-app:latest \
-# --environment blog-henrique-env \
-# --target-port 80 \ 
-# --ingress external
-# --registry-username bloghenriqueacr
-# --registry-password duzYmeARNVgFRMrndpcI91oXkqOJfC4YjrZYUDyAxQ+ACRCFxFzB
-# --registry-server bloghenriqueacr.azurecr.io
-
-
-
+# Create the Container App
+az containerapp create \
+  --name my-container-app \
+  --resource-group my-resource-group \
+  --image myacrname.azurecr.io/my-app:latest \
+  --environment my-container-env \
+  --target-port 80 \
+  --ingress external \
+  --registry-username myacrname \
+  --registry-password <ACR_PASSWORD> \
+  --registry-server myacrname.azurecr.io
