@@ -7,7 +7,10 @@ Cada projeto é uma oportunidade de colocar em prática os conhecimentos adquiri
 
 ## 🚀 Projetos
 
-- [Cloud Native](dio_cloud_native) — Solução para armazenar e gerenciar dados de um e-commerce na nuvem, focando em escalabilidade, segurança e eficiência.
+- [Cloud Native](dio_cloud_native)
+Lab01: Solução para armazenar e gerenciar dados de um e-commerce na nuvem, focando em escalabilidade, segurança e eficiência.
+Lab02: Aplicação web estática no Azure App Service, utilizando a Azure CLI para provisionar recursos na nuvem de forma automatizada.
+Lab03: 
 
 
 ---
