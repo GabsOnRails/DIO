@@ -1,3 +1,4 @@
+
 # Diolab07 - Projetos Diversos
 
 Este repositório reúne múltiplos projetos desenvolvidos no contexto do **Diolab07**, cada um com uma proposta distinta. Eles variam desde uma API em Node.js para consulta de endereços até diferentes implementações de jogos de roleta interativos usando HTML, CSS e JavaScript.
@@ -131,3 +132,5 @@ Abra `index.html` no navegador.
 
 - Todos os jogos de roleta são interativos e utilizam o clique para acionar a rotação.
 - Cada versão possui uma identidade visual própria, com diferentes estilos e paletas de cores.
+
+
