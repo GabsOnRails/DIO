@@ -1,0 +1,14 @@
+body {
+    background-color: #ADD8E6; /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#rouletteCanvas {
+    background: linear-gradient(to right, white, pink); /* White and pink background for the roulette */
+    border-radius: 50%;
+    border: 2px solid #000; /* Optional border for the canvas */
+}
