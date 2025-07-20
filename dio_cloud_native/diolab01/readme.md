@@ -1,5 +1,5 @@
 
-# Lab 02: Solução de armazenamento e gerenciamento de dados em nuvem
+# Lab 01: Solução de armazenamento e gerenciamento de dados em nuvem
 
 ## 📎 Sobre o Projeto
 Nesse laboratório desenvolvi, em Python, uma solução para armazenar e gerenciar dados de um e-commerce na nuvem, focando em escalabilidade, segurança e eficiência.

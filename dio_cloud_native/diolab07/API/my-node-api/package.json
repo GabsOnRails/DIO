@@ -1,0 +1,15 @@
+{
+  "name": "my-node-api",
+  "version": "1.0.0",
+  "description": "A simple Node.js API to fetch address information using the VIA CEP service.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^0.21.1"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
